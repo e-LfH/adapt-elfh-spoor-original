@@ -144,6 +144,9 @@ function AICC_LMS() {
                     else if (key == "student_name") {
                         self.StudentName = value;
                     }
+                    else if (key == "exit") {
+                        self.ExitValue = value;
+                    }
                     else if (key == "lesson_location") {
                         self.LessonLocation = value;
                     }
@@ -278,18 +281,14 @@ function AICC_LMS() {
         var sData = "";
 
         sData += "[CORE]" + sCRLF;
-        //sData += "Lesson_Location="+ g_sLmsCmiLocation + sCRLF;
         sData += "Lesson_Location=" + self.LessonLocation + sCRLF;
-        //sData += "Lesson_Status="+ sStatus + sCRLF;
         sData += "Lesson_Status=" + self.LessonStatus + sCRLF;
-        //sData += "Score="+ sScore + sCRLF;
         sData += "Score=" + self.Score + sCRLF;
         sData += "Time=" + self.SessionTime + sCRLF;
         sData += "Exit=" + self.ExitValue + sCRLF;
         
 
         sData += "[CORE_LESSON]" + sCRLF;
-        //sData += "Suspend_Data="+ g_sLmsCmiSuspendData + sCRLF;
         sData += "Suspend_Data=" + self.SuspendData + sCRLF;
 
         sData += "[OBJECTIVES_STATUS]" + sCRLF;
@@ -383,7 +382,7 @@ function AICC_LMS() {
 
             switch (key) {
 
-                case "cmi.core.lesson_location":
+                case "cmi.core.exit":
                     self.ExitValue = value;
                     break;
 
@@ -437,6 +436,9 @@ function AICC_LMS() {
 
                     break;
 
+                case "cmi.core.exit":
+                    return self.ExitValue;
+                    break;
                 case "cmi.core.lesson_location":
                     return self.LessonLocation;
                     break;
