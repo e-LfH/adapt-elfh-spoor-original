@@ -3,7 +3,10 @@
 
 The **e-LfH Spoor** *extension* is for use with the the [Adapt framework](https://github.com/adaptlearning/adapt_framework).  It is based on the [adapt-contrib-spoor](https://github.com/adaptlearning/adapt-contrib-spoor) extension, which adds SCORM 1.2 tracking functionality to Adapt courses.  The e-LfH Spoor plugin adds **AICC HACP (HTTP-based AICC/CMI protocol)** tracking functionality, on top of existing SCORM tracking made available inside the adapt-contrib-spoor extension.
 
-**Please be aware that this extension is still in development and is not currently fit for use.  Please check back in a few days.**
+Please be aware that this extension has so far been tested and verified to work in the following LMS's.  If you encounter any issues with other LMS's please report them:
+
+- e-Learning for Healthcare's Hub
+- Moodle version 3.0 release candidate 4
 
 AICC HACP allows organisations to run courses in their LMS applications, which are sitting on another organisation's domain, usually inside some sort of content repository, without causing [cross site scriping](https://en.wikipedia.org/wiki/Cross-site_scripting) errors in the user's web browser.  Running courses in this way is not possible using SCORM, because a web browser will throw a cross site scripting error and prevent the course from running for security reasons.  Please note that AICC HACP will only work if an application exists to relay the HTTP requests posts to and from the LMS.  This **relay** application often exists as part of an organisation's content repository.  This extension completes one part of the AICC HACP implementation but a relay application and an LMS capable of launching external AICC content, is required to make the entire process work.
 
