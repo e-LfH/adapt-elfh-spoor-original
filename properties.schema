@@ -11,7 +11,7 @@
         "config": {
           "type": "object",
           "properties": {
-            "_spoor": {
+            "_elfh_spoor": {
               "type": "object",
               "required": false,
               "legend": "e-LfH Spoor",

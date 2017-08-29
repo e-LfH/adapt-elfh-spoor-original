@@ -1,6 +1,6 @@
 {
   "name": "adapt-elfh-spoor",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "framework": "^2.0.0",
   "homepage": "https://github.com/e-LfH/adapt-elfh-spoor",
   "displayName" : "e-LfH Spoor",
@@ -12,5 +12,5 @@
     "adapt-extension"
   ],
   "license": "GPLv3",
-  "targetAttribute": "_spoor"
+  "targetAttribute": "_elfh_spoor"
 }
