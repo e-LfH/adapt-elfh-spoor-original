@@ -101,6 +101,7 @@ define([
 
         setupEventListeners: function() {
             var advancedSettings = this._config._advancedSettings;
+            
             var shouldCommitOnVisibilityChange = (!advancedSettings ||
                 advancedSettings._commitOnVisibilityChangeHidden !== false) &&
                 document.addEventListener;
@@ -123,7 +124,11 @@ define([
         removeEventListeners: function() {
             $(window).off('beforeunload unload', this._onWindowUnload);
 
-            document.removeEventListener("visibilitychange", this.onVisibilityChange);
+            if (document.removeEventListener)
+            {
+                document.removeEventListener("visibilitychange", this.onVisibilityChange);
+            }
+            
         },
 
         onVisibilityChange: function() {
