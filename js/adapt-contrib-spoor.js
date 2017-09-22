@@ -107,7 +107,7 @@ define([
                 document.addEventListener;
 
             this._onWindowUnload = _.bind(this.onWindowUnload, this);
-            $(window).on('beforeunload unload', this._onWindowUnload);
+            $(window).on('beforeunload unload pagehide', this._onWindowUnload);
 
             if (shouldCommitOnVisibilityChange) {
                 document.addEventListener("visibilitychange", this.onVisibilityChange);
@@ -122,7 +122,7 @@ define([
         },
 
         removeEventListeners: function() {
-            $(window).off('beforeunload unload', this._onWindowUnload);
+            $(window).off('beforeunload unload pagehide', this._onWindowUnload);
 
             if (document.removeEventListener)
             {
